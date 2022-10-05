@@ -1,2 +1,2 @@
 # resume
-A Really Good Resume Template (trust me)
+Here's my resume, if you feel like compiling it in LaTeX for whatever reason. You do you.

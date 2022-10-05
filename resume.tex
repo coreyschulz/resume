@@ -12,7 +12,7 @@
   \usepackage[T1]{fontenc}
   \usepackage[pdftex]{hyperref}
 \fi
-\usepackage{fontawesome}
+\usepackage{fontawesome5}
 \usepackage[sfdefault,light]{FiraSans}
 \usepackage{anyfontsize}
 \usepackage{xcolor}
@@ -21,7 +21,7 @@
 %-------------------------------------------------- SETTINGS HERE --------------------------------------------------
 % Header settings
 \def \fullname {Corey Schulz}
-\def \subtitle {}
+\def \subtitle { } % \psicon \hspace{3pt} RPSClubPres}
 
 \def \linkedinicon {\faLinkedin}
 \def \linkedinlink {https://linkedin.com/in/coreyschulz/}
@@ -40,7 +40,10 @@
 
 \def \websiteicon {\faGlobe}
 \def \websitelink {https://coreyschulz.com/}
-\def \websitetext { coreyschulz.com}
+\def \websitetext {\hspace{.1pt} coreyschulz.com}
+
+\def \psicon {\faPlaystation}
+\def \pstext {RPSClubPres}
 
 \def \headertype {\doublecol} % \singlecol or \doublecol
 
@@ -51,7 +54,7 @@
 
 % Define colours
 \definecolor{primary}{HTML}{000000}
-\definecolor{secondary}{HTML}{0D47A1}
+\definecolor{secondary}{HTML}{003087} % 0D47A1
 \definecolor{accent}{HTML}{263238}
 \definecolor{links}{HTML}{1565C0}
 
@@ -62,7 +65,9 @@
 \def \phone {\phoneicon \hspace{3pt}{ \phonetext}}
 \def \email {\emailicon \hspace{3pt}\href{\emaillink}{\emailtext}}
 \def \github {\githubicon \hspace{3pt}\href{\githublink}{\githubtext}}
-\def \website {\websiteicon \hspace{3pt}\href{\websitelink}{\websitetext}}
+% \def \website {\websiteicon \hspace{3pt}\href{\websitelink}{\websitetext}}
+\def \website {}
+\def \ps {\psicon \hspace{3pt}{\pstext}}
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.55in}
@@ -93,6 +98,9 @@
 % Entry start and end, for spacing
 \newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=2.5mm]}
 \newcommand{\resumeEntryEnd}{\end{itemize}\vspace{\entryspacing}}
+
+% Command for changing to console font 
+\def\code#1{\texttt{#1}}
 
 % Itemized list for the bullet points under an entry, if necessary
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=4.5mm]}
@@ -175,7 +183,60 @@
 %---------------------------------------------------- HEADER ----------------------------------------------------
 
 \headertype{\linkedin}{\github}{\website}{\phone}{\email}{} % Set the order of items here
-\vspace{-10pt} % Set a negative value to push the body up, and the opposite
+\vspace{-2pt} % Change here if you have/don't have a name subtitle. -2pt if you do, -10pt if you don't.
+
+
+%-------------------------------------------------- EXPERIENCE --------------------------------------------------
+\section{\faCode}{Experience}
+
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {\faAmazon \hspace{3pt} Amazon Kindle}{February 2022 -- Present}
+      {Software Development Engineer, JP Manga}{Seattle, WA}
+    \resumeItemListStart
+      \resumeItem {Write publisher and author-facing software for Amazon Japan's manga store through full Kindle software stack \code{ AWS | Java }}
+      \resumeItem {Create new Kindle Direct Publishing webtoon experience for indie authors required for Amazon Fliptoon launch in Japan and the United States \code{ Lisp | React}}
+      \resumeItem {Negotiate with external stakeholders to drive team goals and organize international cross-team collaboration }
+      \resumeItem {Conduct interviews, mentor and onboard new developers}
+      
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {\faAmazon \hspace{3pt} Amazon Robotics}{August 2020 -- February 2022}
+      {Software Development Engineer, Robotics Edge Technologies}{Boston, MA}
+    \resumeItemListStart
+      \resumeItem {Wrote scalable, enterprise cloud solutions for orchestrating millions of robotic edge devices across Amazon's global fulfillment network \code{ Kotlin | Python | AWS}}
+      \resumeItem {Developed front-end UI features for edge device configuration site  \code{ JavaScript | React}}
+      \resumeItem {Designed and implemented network externalization functionality to free addresses in Amazon's IP block critical for Robotic Fulfillment Center expansion \code{ Kotlin | Python}}
+      \resumeItem {Lead team sprint and agile meetings for 12 people owning 14 internal products}
+      \resumeItem {Mentored intern, oversaw and provided feedback on successful project development}      
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {\faPager \hspace{3pt} Motorola Solutions}{October 2019 -- July 2020}
+      {Software Engineer Co-Op, Command Center Software}{Salt Lake City, UT}
+    \resumeItemListStart
+      \resumeItem {Developed Spillman Flex analysis dashboards for internal and law enforcement use \code{  Python | C\# | MySQL}}
+      \resumeItem {Managed internal development team for Jira extensions, triaged and prioritized requests}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {\faSpaceShuttle \hspace{3pt} Space Dynamics Laboratory}{May 2019 -- August 2019}
+      {Software Engineer Intern, C4ISR Systems}{Logan, UT}
+    \resumeItemListStart
+        \resumeItem {Worked on reconnaissance software for U.S. Naval Research Laboratory}
+        \resumeItem {Created and maintained build and automation environments \code{ Docker | Jenkins}}
+        \resumeItem {Developed front-end GUI \code{ VueJS | HTML | CSS}}
+        \resumeItem {Created algorithms for 3D rendering, improved project efficiency by 35x \code{ JavaScript}}
+    \resumeItemListEnd
+  \resumeEntryEnd
 
 %-------------------------------------------------- EDUCATION --------------------------------------------------
 \section{\faGraduationCap}{Education}
@@ -183,39 +244,8 @@
   \resumeEntryStart
     \resumeEntryTSDL
       {The University of Utah}{2016 -- 2020}
-      {BS Computer Science}{Salt Lake City, UT}
+      {BS Computer Science - Artificial Intelligence Certificate Track}{Salt Lake City, UT}
   \resumeEntryEnd
-
-%-------------------------------------------------- EXPERIENCE --------------------------------------------------
-\section{\faPieChart}{Experience}
-
-  \resumeEntryStart
-    \resumeEntryTSDL
-      {\faAmazon \hspace{3pt} Amazon.com}{August 2020 -- Present}
-      {Software Development Engineer}{Boston, MA}
-    \resumeItemListStart
-      \resumeItem {I do things here, I promise.}
-    \resumeItemListEnd
-  \resumeEntryEnd
-
-  \resumeEntryStart
-    \resumeEntryTSDL
-      {\faGlobe \hspace{3pt} Motorola Solutions}{October 2019 -- July 2020}
-      {Software Engineer Co-Op}{Salt Lake City, UT}
-    \resumeItemListStart
-      \resumeItem {Jira was my passion.}
-    \resumeItemListEnd
-  \resumeEntryEnd
-
-  \resumeEntryStart
-    \resumeEntryTSDL
-      {\faSpaceShuttle \hspace{3pt} Space Dynamics Laboratory}{May 2019 -- August 2019}
-      {Software Engineer Intern}{Logan, UT}
-    \resumeItemListStart
-        \resumeItem {Space.}
-    \resumeItemListEnd
-  \resumeEntryEnd
-
 
 %-------------------------------------------------- PROJECTS --------------------------------------------------
 \section{\faFlask}{Projects}
@@ -224,32 +254,26 @@
     \resumeEntryTD
       {ZeroG - Infrastructureless Messaging}{}
     \resumeItemListStart
-      \resumeItem {Messaging platform that Sort Of Worked.}
-      \resumeItem {First Place, 2020 University of Utah Capstone}
+      \resumeItem {First Place, University of Utah Computer Science Capstone, 2020}
+      \resumeItem {Infrastructureless messaging platform made for Android that leverages peer-to-peer capabilities of smartphones to create an entirely offline experience via mesh networking  \code{ Java}}
     \resumeItemListEnd
   \resumeEntryEnd
 
-  \resumeEntryStart
-    \resumeEntryTD
-      {BCS}{}
-    \resumeItemListStart
-      \resumeItem {Revolutionary health game.}
-    \resumeItemListEnd
-  \resumeEntryEnd
-
-  \resumeEntryStart
-    \resumeEntryTD
-      {Another project here}{}
-    \resumeItemListStart
-      \resumeItem {I forget what I've done.}
-    \resumeItemListEnd
-  \resumeEntryEnd
+  % \resumeEntryStart
+  %   \resumeEntryTD
+  %     {Game Development}{}
+  %   \resumeItemListStart
+  %     \resumeItem {\textbf{Space Wars} multiplayer (online) space shooter game \code{ C\#}}
+  %     \resumeItem {\textbf{Pyquest} top-down RPG game \code{ Python}}
+  %   \resumeItemListEnd
+  % \resumeEntryEnd
 
 %-------------------------------------------------- PROGRAMMING SKILLS --------------------------------------------------
-\section{\faGears}{Skills}
+\section{\faChessKnight}{Skills}
  \resumeEntryStart
-  \resumeEntryS{Traits } {something here? Not quite sure what to do with this section but it's here.}
-  \resumeEntryS{Talents } {Amateur nose flutist}
+  \resumeEntryS{Cloud Technologies } {\code{API Gateway, AWS IoT, CDK, CodePipeline, Docker, DynamoDB, EC2, Lambda, S3}}
+  % \resumeEntryS{Favorite Games } {Super Paper Mario, PMD: Explorers of Sky, Persona 4, FINAL FANTASY XIV}
  \resumeEntryEnd
 
 \end{document}
+
